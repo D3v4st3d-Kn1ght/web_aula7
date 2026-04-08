@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = inicio;
+        let campo;
+        let memoria;
+
+        function inicio()
+        {
+            let botao_guardar = document.getElementById('btn_guardar');
+            let botao_adicionar = document.getElementById('btn_adicionar');
+            let botao_subtrair = document.getElementById('btn_subtrair');
+            let botao_limpar = document.getElementById('btn_limpar');
+            botao_guardar.addEventListener('click', guardar);
+            botao_adicionar.addEventListener('click', adicionar);
+            botao_subtrair.addEventListener('click', subtrair);
+            botao_limpar.addEventListener('click', limpar);
+        }
+        function guardar()
+        {
+            campo = document.getElementById('numero');
+            let valor = campo.value;
+            campo = document.getElementById('numero').value = '';
+            memoria = valor;
+        }
+        function adicionar()
+        {
+            campo = document.getElementById('numero');
+            let valor = campo.value;
+            campo = document.getElementById('numero').value = parseInt(memoria) + parseInt(valor);
+        }
+        function subtrair()
+        {
+            campo = document.getElementById('numero');
+            let valor = campo.value;
+            campo = document.getElementById('numero').value = parseInt(memoria) - parseInt(valor);
+        }
+        function limpar()
+        {
+            campo = document.getElementById('numero');
+            campo = document.getElementById('numero').value = '';
+            memoria = null;
+        }
+    </script>
+</head>
+<body>
+    <label for="numero">Digitar:</label>
+    <input type="text" id="numero">
+    <p id="saida"></p>
+    <button id="btn_guardar">Guardar</button>
+    <br>
+    <button id="btn_adicionar">Adicionar</button>
+    <br>
+    <button id="btn_subtrair">Subtrair</button>
+    <br>
+    <button id="btn_limpar">Limpar</button>
+</body>
+</html>

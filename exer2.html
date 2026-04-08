@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        window.onload = inicio;
+
+        function inicio()
+        {
+            let botao = document.getElementById('btn_calcular');
+            botao.addEventListener('click', calcular);
+        }
+
+        function calcular()
+        {
+            let campo = document.getElementById('numero');
+            let digitado = campo.value;
+            let numero = parseInt(digitado);
+            
+            let resultado = numero * 2;
+            let mensagem = "Resultado = " + resultado;
+            
+            let saida = document.getElementById('saida');
+            saida.innerHTML = mensagem;
+        }
+    </script>
+</head>
+<body>
+    <h1>Calcula Dobro</h1>
+    <label for="numero">Digite:</label>
+    <input type="Number" id="numero">
+    <p id="saida"></p>
+    <button id="btn_calcular">Calcular</button>
+</body>
+</html>
